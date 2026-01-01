@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Хотели в чужбина</title>
+	<link rel="icon" href="newwaveicon.png">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap&subset=cyrillic" rel="stylesheet">
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			let searchInput = document.querySelector('.search-input');
+			let cards = document.querySelectorAll('.card');
+
+			searchInput.addEventListener('keyup', (e) => {
+				let text = e.target.value.toLowerCase();
+
+				cards.forEach(card => {
+					let hotelName = card.querySelector('h3').innerText.toLowerCase();
+
+					if (hotelName.includes(text)) 
+					{
+						card.style.display = '';
+					}
+					else
+					{
+						card.style.display = 'none';
+					}
+				});
+			});
+			let container = document.querySelector('.container');
+			let cardsSort = Array.from(document.querySelectorAll('.card'));
+
+			cardsSort.sort((a, b) =>{
+				let nameA = a.querySelector('h3').innerText.toLowerCase();
+				let nameB = b.querySelector('h3').innerText.toLowerCase();
+				return nameA.localeCompare(nameB);
+			});
+
+			cardsSort.forEach(card => {
+				container.appendChild(card);
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div class="navbar">
+		<div class="logo">
+			<a href="nachalna_stranica.html"> <img src="newwaveicon.png" alt="Лого на на NewWave"></a>
+		</div>
+		<div class="search">
+			<input type="text" class="search-input" placeholder="Търси държава...">
+		</div>
+		<ul class="nav">
+			<li class="nav-item"><a href="HoteliBG.html" class="nav-link">Хотели в България</a></li>
+			<li class="nav-item"><a href="HoteliChujbina.html" class="nav-link">Хотели в чужбина</a></li>
+			<li class="nav-item"><a href="ZaNas.html" class="nav-link">За нас</a></li>
+			<li class="nav-item"><a href="Contacti.html" class="nav-link">Контакти</a></li>
+			<li class="nav-item"><a href="Novini.html" class="nav-link">Новини</a></li>
+		</ul>
+	</div>
+
+	<div class="container">
+		<div class="card">
+			<a href="HoteliIspaniq.html">
+				<img src="img/екскурзия-град-мадрид-испания-улица-уеб-турс-ekskurzia-grad-madrid-ispania-ulica-web-tours.jpg" alt="Снимка на Испания">
+				<h3>Хотели в Испания</h3>
+				<p style="color: red;">Цени започващи от <strong> 144 лв.</strong>/ 73 €</p>
+			</a>
+		</div>
+
+		<div class="card">
+			<a href="HotelAvstraliq.html">
+				<img src="img/Sydney_skyline_at_dusk_-_Dec_2008.jpg" alt="Снимка на Австралия">
+				<h3>Хотели в Австралия</h3>
+				<p style="color: red;">Цени започващи от <strong> 150 лв.</strong>/ 76 €</p>
+			</a>
+		</div>
+
+		<div class="card">
+			<a href="HotelPortugaliq.html">
+				<img src="img/Порто_Cais_da_Ribeira.jpg" alt="Снимка на Португаия">
+				<h3>Хотели в Португаия</h3>
+				<p style="color: red;">Цени започващи от <strong> 297 лв.</strong>/ 151 €</p>
+			</a>
+		</div>
+
+		<div class="card">
+			<a href="HotelFranciq.html">
+				<img src="img/images.jpg" alt="Снимка на Франция">
+				<h3>Хотели в Франция</h3>
+				<p style="color: red;">Цени започващи от <strong> 252 лв.</strong>/ 128 €</p>
+			</a>
+		</div>
+
+		<div class="card">
+			<a href="HotelNiderlandiq.html" >
+				<img src="img/нидерландия-niderlandia-уеб-турс-web-tours-14.jpg" alt="Снимка на Нидерландия">
+				<h3>Хотели в Нидерландия</h3>
+				<p style="color: red;">Цени започващи от <strong> 249 лв.</strong>/ 127 €</p>
+			</a>
+		</div>
+
+		<div class="card">
+			<a href="HotelVelikobritaniq.html">
+				<img src="img/01____united_kingdom.jpg" alt="Снимка на Великобритания">
+				<h3>Хотели в Великобритания</h3>
+				<p style="color: red;">Цени започващи от <strong> 151 лв.</strong>/ 77 €</p>
+			</a>
+		</div>
+
+		<div class="card">
+			<a href="HotelItaliq.html">
+				<img src="img/milano-ot-varna-predkoledna-programa-4_1752561276.jpg" alt="Снимка на Италия">
+				<h3>Хотели в Италия</h3>
+				<p style="color: red;">Цени започващи от <strong> 114 лв.</strong>/ 58 €</p>
+			</a>
+		</div>
+	</div>
+<footer class="footer">
+		<div class="f-container">
+			<div class="f-column">
+				<h2>Бързи връзки</h2>
+				<a href="HoteliBG.html"><i class="fa-solid fa-hotel"></i> Хотели в България</a>
+				<br>
+				<a href="HoteliChujbina.html"><i class="fa-solid fa-hotel"></i> Хотели в чужбина</a>
+				<br>
+				<a href="ZaNas.html"><i class="fa-solid fa-person"></i> За нас</a>
+				<br>
+				<a href="Contacti.html"><i class="fa-solid fa-address-book"></i> Контакти</a>
+				<br>
+				<a href="Vuprosi.html"><i class="fa-solid fa-question"></i> Често задавани въпроси</a>
+			</div>
+
+			<div class="f-column">
+				<h2>Нашите партньори</h2>
+				<a href="https://www.air.bg/bg"><i class="fa-solid fa-plane"></i> Bulgaria Air</a>
+				<br>
+				<a href="https://toprentacar.bg/"><i class="fa-solid fa-car"></i> Top Rent-A-Car</a>
+				<br>
+				<a href="https://www.allianz.bg/bg_BG/individuals.html"><i class="fa-solid fa-heart-pulse"></i> Allianz</a>
+			</div>
+
+			<div class="f-column">
+				<h2>Връзка с нас</h2>
+				<p><i class="fa-solid fa-phone"></i> 0876521864</p>
+				<p><i class="fa-solid fa-phone"></i> 0876004123</p>
+				<p><i class="fa-solid fa-envelope-circle-check"></i>office@newwave.bg</p>
+			</div>
+
+			<div class="f-column">
+				<h2>Последвайте ни</h2>
+				<div class="social">
+					<a href="https://www.facebook.com/newwaveholidays.bg"><i class="fa-brands fa-facebook"></i></a>
+					<a href="https://x.com/newwavebg"><i class="fa-brands fa-x-twitter"></i></a>
+					<a href="https://www.linkedin.com/company/new-wave-holidays/"><i class="fa-brands fa-linkedin"></i></a>
+					<a href="https://www.pinterest.com/newwaveholidays/"><i class="fa-brands fa-pinterest-p"></i></a>
+					<a href="https://www.youtube.com/channel/UCRc-uqawUUkWoWMNS-rk1DQ"><i class="fa-brands fa-youtube"></i></a>
+				</div>
+			</div>
+
+			<div class="f-bottom">
+				<p>&copy; NewWave , 2025</p>
+				<img src="newwaveicon.png" alt="Лого на на NewWave" class="bottom-logo">
+			</div>
+		</div>
+</footer>
+</body>
+</html>
