@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Хотел Форест Бийч</title>
+	<link rel="icon" href="../newwaveicon.png">
+	<link rel="stylesheet" href="../style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap&subset=cyrillic" rel="stylesheet">
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+		let mainImg = document.getElementById('MainImg');
+		let photos = document.querySelectorAll('.photos img');
+
+		photos.forEach((photo) =>{
+			photo.addEventListener('click', () =>{
+				MainImg.src = photo.src;
+			});
+		});
+
+		let formreservation = document.getElementById("formreservation");
+		let buttonBook = document.getElementById("buttonBook");
+		let close = document.getElementById("close");
+		let form = document.getElementById("reservation");
+
+		if (buttonBook) {
+			buttonBook.addEventListener('click', () =>{
+				formreservation.style.display = "flex";
+				document.body.style.overflow = "hidden";
+			});
+		}
+
+		if (close) {
+			close.addEventListener('click', () =>{
+				formreservation.style.display = "none";
+				document.body.style.overflow = "auto";
+			});
+		}
+
+		window.addEventListener('click', (e) => {
+			if (e.target == formreservation) {
+				formreservation.style.display = "none";
+				document.body.style.overflow = "auto";
+			}
+		});
+
+		if (form) {
+			form.addEventListener('submit', (e) => {
+				e.preventDefault();
+				alert("Благодарим Ви! Вашата резервация е получена успешно");
+				formreservation.style.display = "none";
+				document.body.style.overflow = "auto";
+				form.reset();
+			});
+		}
+	});
+	</script>
+</head>
+<body>
+	<div class="navbar">
+		<div class="logo">
+			<a href="../nachalna_stranica.html"> <img src="../newwaveicon.png" alt="Лого на на NewWave"></a>
+		</div>
+		<ul class="nav">
+			<li class="nav-item"><a href="../HoteliBG.html" class="nav-link">Хотели в България</a></li>
+			<li class="nav-item"><a href="../HoteliChujbina.html" class="nav-link">Хотели в чужбина</a></li>
+			<li class="nav-item"><a href="../ZaNas.html" class="nav-link">За нас</a></li>
+			<li class="nav-item"><a href="../Contacti.html" class="nav-link">Контакти</a></li>
+			<li class="nav-item"><a href="../Novini.html" class="nav-link">Новини</a></li>
+		</ul>
+	</div>
+
+	<h1 class="blue">Хотел Форест Бийч</h1>
+
+	<div class="Hotel">
+		<div class="gallery">
+			<div class="main-img">
+				<img src="BIG_hotel_2_1682686090881.jpg" id="MainImg" alt="Основна снимка на Хотел Форест Бийч">
+			</div>
+
+			<div class="photos">
+				<img src="BIG_hotel_2_1682686090881.jpg" alt="Основна снимка на Хотел Форест Бийч">
+				<img src="BIG_-3_1513755644881.jpg" alt="Стая">
+				<img src="BIG_-9_1513755648881.jpg" alt="Тераса">
+				<img src="BIG_-10_1513755649881.jpg" alt="Баня">
+				<img src="BIG_-25_1513755658881.jpg" alt="Реценпция">
+				<img src="BIG_pool_2_1682686090881.jpg" alt="Басейн">
+				<img src="BIG_restaurant_1682686090881.jpg" alt="Ресторант">
+			</div>
+		</div>
+
+		<div class="info">
+			<h2>Хотел Форест Бийч</h2>
+			<br>
+			<p><i class="fa-solid fa-location-dot blue"></i><strong> Локация: </strong>Приморско, България</p>
+			<p><i class="fa-solid fa-car blue"></i><strong>Паркинг: </strong>Частен паркинг 30 лв. / 15 € на ден</p>
+			<p><strong>Удобства:</strong></p>
+			<p><i class="fa-solid fa-water-ladder blue"></i><strong> Басейн: </strong>Разполага с басейн външен</p>
+			<p><i class="fa-solid fa-umbrella-beach blue"></i><strong> Плаж: </strong>На около 300 м от плажа</p>
+			<p><i class="fa-solid fa-dumbbell blue"></i></i><strong> Спорт и развлечения: </strong>Спа център</p>
+			<p><i class="fa-solid fa-bacon blue"></i><strong> Изхранване: </strong>All Inclusive</p>
+			<br>
+			<button class="buttonBook" id="buttonBook">
+				<p><i class="fa-solid fa-calendar-check"></i><strong>Резервирай сега</strong></p>
+			</button>
+			
+			<div class="formreservation" id="formreservation">
+				<div class="book" id="book">
+					<div class="form" id="form">
+						<span id="close">&times;</span>
+						<h2>Форма за резервация</h2>
+						<p>Моля, въведете вашите данни и дата на настаняване</p>
+
+						<form class="reservation" id="reservation">
+							<input type="text" placeholder="Вашето име" required>
+							<input type="email" placeholder="Имейл адрес" required>
+							<input type="phone" placeholder="Телефонен номер" required>
+							<br>
+							<label>Дата на настаняване</label>
+							<input type="date" required>
+							<br>
+							<label>Дата на заминаване</label>
+							<input type="date" required>
+							<br>
+							<button type="submit" class="submit">Изпратена резервация</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="f-container">
+			<div class="f-column">
+				<h2>Бързи връзки</h2>
+				<a href="../HoteliBG.html"><i class="fa-solid fa-hotel"></i> Хотели в България</a>
+				<br>
+				<a href="../HoteliChujbina.html"><i class="fa-solid fa-hotel"></i> Хотели в чужбина</a>
+				<br>
+				<a href="../ZaNas.html"><i class="fa-solid fa-person"></i> За нас</a>
+				<br>
+				<a href="../Contacti.html"><i class="fa-solid fa-address-book"></i> Контакти</a>
+				<br>
+				<a href="../Vuprosi.html"><i class="fa-solid fa-question"></i> Често задавани въпроси</a>
+			</div>
+
+				<div class="f-column">
+					<h2>Нашите партньори</h2>
+					<a href="https://www.air.bg/bg"><i class="fa-solid fa-plane"></i> Bulgaria Air</a>
+					<br>
+					<a href="https://toprentacar.bg/"><i class="fa-solid fa-car"></i> Top Rent-A-Car</a>
+					<br>
+					<a href="https://www.allianz.bg/bg_BG/individuals.html"><i class="fa-solid fa-heart-pulse"></i> Allianz</a>
+				</div>
+
+			<div class="f-column">
+				<h2>Връзка с нас</h2>
+				<p><i class="fa-solid fa-phone"></i> 0876521864</p>
+				<p><i class="fa-solid fa-phone"></i> 0876004123</p>
+				<p><i class="fa-solid fa-envelope-circle-check"></i>office@newwave.bg</p>
+			</div>
+
+			<div class="f-column">
+				<h2>Последвайте ни</h2>
+				<div class="social">
+					<a href="https://www.facebook.com/newwaveholidays.bg"><i class="fa-brands fa-facebook"></i></a>
+					<a href="https://x.com/newwavebg"><i class="fa-brands fa-x-twitter"></i></a>
+					<a href="https://www.linkedin.com/company/new-wave-holidays/"><i class="fa-brands fa-linkedin"></i></a>
+					<a href="https://www.pinterest.com/newwaveholidays/"><i class="fa-brands fa-pinterest-p"></i></a>
+					<a href="https://www.youtube.com/channel/UCRc-uqawUUkWoWMNS-rk1DQ"><i class="fa-brands fa-youtube"></i></a>
+				</div>
+			</div>
+
+			<div class="f-bottom">
+				<p>&copy; NewWave , 2025</p>
+				<img src="../newwaveicon.png" alt="Лого на на NewWave" class="bottom-logo">
+			</div>
+		</div>
+	</footer>
+</body>
