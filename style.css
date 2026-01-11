@@ -7,7 +7,7 @@
 h1
 {
 	font-size: 34px;
-	color: #00458b0;
+	color: #00458b;
 	text-align: center;
 	margin-top: 42px;
 }
@@ -248,7 +248,7 @@ ul.nav
 .f-column h3
 {
 	font-size: 20px;
-	border-bottom: 2px solide white;
+	border-bottom: 2px solid white;
 	display: inline-block;
 }
 
@@ -415,4 +415,5 @@ ul.nav
 {
 	display: flex;
 	gap: 30px;
+
 }
